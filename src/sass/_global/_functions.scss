@@ -1,0 +1,14 @@
+// -------------------------------------------------------------------
+// [Px to rem]
+// @Description:
+// Returns pixel value as rems based on the base font-size
+// @Usage:
+// font-size: toRems(14px);
+// -------------------------------------------------------------------
+
+@function toRems($target) {
+  @if $target == 0 {
+    @return 0;
+  }
+  @return $target / 16px + 0rem;
+}

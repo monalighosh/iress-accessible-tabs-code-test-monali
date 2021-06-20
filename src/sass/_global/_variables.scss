@@ -1,0 +1,23 @@
+// Global colors
+$c-white: #ffffff;
+$c-black: #000000;
+
+// Site max width
+$site-max-width: toRems(1440px);
+
+// Font sizes
+$font-size-large: toRems(18px);
+$font-size-base: toRems(16px);
+
+// Base styles
+$base-font-color: $c-black;
+$base-font-family: 'DM Sans', sans-serif;
+$base-font-size: $font-size-base;
+$base-font-weight: 400;
+$base-line-height: 1.5;
+
+// Spacing
+$spacing-small: toRems(15px);
+$spacing-base: toRems(20px);
+$spacing-medium: toRems(30px);
+$spacing-large: toRems(50px);

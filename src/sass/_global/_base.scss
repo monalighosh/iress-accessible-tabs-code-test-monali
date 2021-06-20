@@ -1,0 +1,13 @@
+html,
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  width: 100%;
+  z-index: 0;
+}
+
+body {
+  font-size: $font-size-large;
+}
