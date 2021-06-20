@@ -1,6 +1,10 @@
 // Global colors
 $c-white: #ffffff;
 $c-black: #000000;
+$c-grey: #9b9b9b;
+$c-pearl: #fcf4ee;
+$c-blue: #000066;
+$c-orange: #cd7943;
 
 // Site max width
 $site-max-width: toRems(1440px);
@@ -8,6 +12,9 @@ $site-max-width: toRems(1440px);
 // Font sizes
 $font-size-large: toRems(18px);
 $font-size-base: toRems(16px);
+
+// Font weight
+$font-weight-heavy: 700;
 
 // Base styles
 $base-font-color: $c-black;
@@ -17,7 +24,16 @@ $base-font-weight: 400;
 $base-line-height: 1.5;
 
 // Spacing
+$spacing-xsmall: toRems(10px);
 $spacing-small: toRems(15px);
 $spacing-base: toRems(20px);
 $spacing-medium: toRems(30px);
 $spacing-large: toRems(50px);
+
+// Focus
+$focus-style: toRems(2px) dashed $c-orange;
+
+// Breakpoints
+$bp-medium: 1024px;
+$bp-small: 768px;
+$bp-xsmall: 767px;

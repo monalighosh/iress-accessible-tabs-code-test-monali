@@ -8,15 +8,19 @@
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="dist/css/index.min.css" />
   </head>
   <body>
+    <header class="c-header">
+      <section class="l-section u-bottom-padding-zero">
+        <h1>Accessible Tabs</h1>
+      </section>
+    </header>
     <main>
       <section class="l-section">
-        <h1>Accessible Tabs</h1>
         <section class="c-tabs" aria-multiselectable="false">
           <h2 class="c-tabs__title">Tab Group 1</h2>
           <ul class="c-tabs__navlist" role="tablist">
@@ -67,12 +71,13 @@
           </ul>
           <div class="c-tabs__panels">
             <div
-              class="c-tabs__panel"
+              class="c-tabs__panel js-tabs-panel"
               id="group1-tab-panel-1"
               role="tabpanel"
               aria-labelledby="group1-nav-tab-1"
               aria-hidden="true"
             >
+              <h3 class="c-tabs__panel-title">Tab 1</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Curabitur fringilla consectetur enim, varius elementum libero
@@ -85,12 +90,13 @@
               </p>
             </div>
             <div
-              class="c-tabs__panel"
+              class="c-tabs__panel js-tabs-panel is-hidden"
               id="group1-tab-panel-2"
               role="tabpanel"
               aria-labelledby="group1-nav-tab-2"
               aria-hidden="true"
             >
+              <h3 class="c-tabs__panel-title">Tab 2</h3>
               <p>
                 Aenean convallis orci at arcu sodales, id pharetra lorem
                 fringilla. Duis facilisis nisi in metus blandit ornare. Nam
@@ -105,12 +111,13 @@
               </p>
             </div>
             <div
-              class="c-tabs__panel"
+              class="c-tabs__panel js-tabs-panel is-hidden"
               id="group1-tab-panel-3"
               role="tabpanel"
               aria-labelledby="group1-nav-tab-3"
               aria-hidden="true"
             >
+              <h3 class="c-tabs__panel-title">Tab 3</h3>
               <p>
                 Suspendisse potenti. Cras a interdum enim. Nam ullamcorper
                 ligula vel magna pulvinar, vel elementum nisl convallis. Donec
@@ -131,12 +138,13 @@
               </p>
             </div>
             <div
-              class="c-tabs__panel"
+              class="c-tabs__panel js-tabs-panel is-hidden"
               id="group1-tab-panel-4"
               role="tabpanel"
               aria-labelledby="group1-nav-tab-4"
               aria-hidden="true"
             >
+              <h3 class="c-tabs__panel-title">Tab 4</h3>
               <p>
                 Etiam porttitor faucibus nisl, eu scelerisque ipsum. Quisque
                 ultrices commodo justo, eu malesuada leo. Suspendisse volutpat

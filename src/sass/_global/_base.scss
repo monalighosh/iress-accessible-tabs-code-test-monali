@@ -1,3 +1,13 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: $focus-style;
+}
+
 html,
 body {
   color: $base-font-color;
@@ -9,5 +19,39 @@ body {
 }
 
 body {
+  background-color: $c-pearl;
   font-size: $font-size-large;
+}
+
+// Headings
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+// Reset Lists
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Paragraph
+p {
+  margin-bottom: $spacing-medium;
+  margin-top: 0;
+}
+
+a {
+  &,
+  &:link,
+  &:visited {
+    color: $c-blue;
+  }
+
+  &:hover {
+    color: $c-orange;
+  }
 }

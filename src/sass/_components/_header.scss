@@ -1,0 +1,14 @@
+@mixin header {
+  background-color: $c-orange;
+  color: $c-pearl;
+  margin-bottom: $spacing-medium;
+  padding: $spacing-small 0;
+
+  h1 {
+    margin-bottom: 0;
+  }
+}
+
+.c-header {
+  @include header;
+}

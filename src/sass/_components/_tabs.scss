@@ -1,0 +1,110 @@
+@mixin tabs {
+}
+
+@mixin tabs-title {
+  color: $c-blue;
+  font-weight: $font-weight-heavy;
+}
+
+@mixin tabs-navlist {
+  margin-bottom: $spacing-medium;
+
+  @include breakpoint(tablet) {
+    display: flex;
+    margin-bottom: $spacing-xsmall;
+  }
+}
+
+@mixin tabs-navlist-item {
+  margin-bottom: $spacing-xsmall;
+
+  @include breakpoint(tablet) {
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin tabs-nav-tab {
+  &,
+  &:link,
+  &:visited {
+    padding: toRems(5px) $spacing-xsmall toRems(5px) $spacing-medium;
+    position: relative;
+
+    @include breakpoint(tablet) {
+      background-color: $c-blue;
+      color: $c-pearl;
+      padding: $spacing-xsmall $spacing-base;
+      margin-left: toRems(3px);
+    }
+
+    &:before {
+      color: currentColor;
+      content: '\2014';
+      left: 0;
+      padding-left: toRems(5px);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @include breakpoint(tablet) {
+        display: none;
+      }
+    }
+  }
+
+  &:focus {
+    outline: $focus-style;
+  }
+}
+
+@mixin tabs-panel {
+  margin: $spacing-medium 0;
+  padding: toRems(5px) $spacing-xsmall;
+
+  @include breakpoint(tablet) {
+    border: 1px solid $c-blue;
+    padding: $spacing-base;
+    margin: 0 0 $spacing-medium;
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+@mixin tabs-panel-title {
+  border-bottom: toRems(2px) solid $c-blue;
+  padding-bottom: $spacing-xsmall;
+  color: $c-orange;
+}
+
+.c-tabs {
+  @include tabs;
+
+  &__title {
+    @include tabs-title;
+  }
+
+  &__navlist {
+    @include tabs-navlist;
+  }
+
+  &__navlist-item {
+    @include tabs-navlist-item;
+  }
+
+  &__nav-tab {
+    @include tabs-nav-tab;
+  }
+
+  &__panel {
+    @include tabs-panel;
+  }
+
+  &__panel-title {
+    @include tabs-panel-title;
+  }
+}
