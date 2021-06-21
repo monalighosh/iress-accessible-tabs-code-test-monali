@@ -1,4 +1,5 @@
 @mixin tabs {
+  position: relative;
 }
 
 @mixin tabs-title {
@@ -11,7 +12,7 @@
 
   @include breakpoint(tablet) {
     display: flex;
-    margin-bottom: $spacing-xsmall;
+    margin-bottom: 0;
   }
 }
 
@@ -19,10 +20,33 @@
   margin-bottom: $spacing-xsmall;
 
   @include breakpoint(tablet) {
+    border: toRems(1px) solid $c-blue;
+    margin-bottom: $spacing-xxsmall;
+    margin-right: $spacing-xxsmall;
   }
 
   &:last-child {
     margin-bottom: 0;
+
+    @include breakpoint(tablet) {
+      margin-bottom: $spacing-xxsmall;
+      margin-right: 0;
+    }
+  }
+
+  &.is-active {
+    @include breakpoint(tablet) {
+      background-color: $c-pearl;
+      border-bottom: 0;
+      margin-bottom: toRems(-1px);
+    }
+
+    .c-tabs__nav-tab {
+      @include breakpoint(tablet) {
+        background-color: $c-pearl;
+        color: $c-blue;
+      }
+    }
   }
 }
 
@@ -30,14 +54,15 @@
   &,
   &:link,
   &:visited {
-    padding: toRems(5px) $spacing-xsmall toRems(5px) $spacing-medium;
+    padding: $spacing-xxsmall $spacing-xsmall $spacing-xxsmall $spacing-medium;
     position: relative;
 
     @include breakpoint(tablet) {
       background-color: $c-blue;
       color: $c-pearl;
+      display: block;
       padding: $spacing-xsmall $spacing-base;
-      margin-left: toRems(3px);
+      text-decoration: none;
     }
 
     &:before {
@@ -62,23 +87,39 @@
 
 @mixin tabs-panel {
   margin: $spacing-medium 0;
-  padding: toRems(5px) $spacing-xsmall;
+  padding: $spacing-xxsmall $spacing-xsmall;
 
   @include breakpoint(tablet) {
-    border: 1px solid $c-blue;
+    border: toRems(1px) solid $c-blue;
+    margin: 0;
     padding: $spacing-base;
-    margin: 0 0 $spacing-medium;
   }
 
   &.is-hidden {
     display: none;
   }
+
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 @mixin tabs-panel-title {
-  border-bottom: toRems(2px) solid $c-blue;
-  padding-bottom: $spacing-xsmall;
   color: $c-orange;
+  padding-bottom: $spacing-xsmall;
+  position: relative;
+
+  &:after {
+    background-color: $c-blue;
+    bottom: 0;
+    content: '';
+    height: toRems(3px);
+    left: 0;
+    position: absolute;
+    width: toRems(50px);
+  }
 }
 
 .c-tabs {

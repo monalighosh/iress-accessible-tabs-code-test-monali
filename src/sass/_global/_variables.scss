@@ -24,6 +24,7 @@ $base-font-weight: 400;
 $base-line-height: 1.5;
 
 // Spacing
+$spacing-xxsmall: toRems(5px);
 $spacing-xsmall: toRems(10px);
 $spacing-small: toRems(15px);
 $spacing-base: toRems(20px);
@@ -31,7 +32,7 @@ $spacing-medium: toRems(30px);
 $spacing-large: toRems(50px);
 
 // Focus
-$focus-style: toRems(2px) dashed $c-orange;
+$focus-style: toRems(2px) solid $c-orange;
 
 // Breakpoints
 $bp-medium: 1024px;
