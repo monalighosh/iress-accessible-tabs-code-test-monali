@@ -1,0 +1,24 @@
+@mixin notification {
+  display: none;
+  margin: 0 auto $spacing-base;
+  max-width: $site-max-width;
+  padding: $spacing-base;
+
+  &.is-visible {
+    display: block;
+  }
+}
+
+@mixin notification-content {
+  background-color: $c-black;
+  color: $c-white;
+  padding: $spacing-xxsmall $spacing-xsmall;
+}
+
+.c-notification {
+  @include notification;
+
+  &__content {
+    @include notification-content;
+  }
+}

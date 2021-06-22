@@ -20,7 +20,10 @@ body {
 
 body {
   background-color: $c-pearl;
-  font-size: $font-size-large;
+
+  @include breakpoint(tablet) {
+    font-size: $font-size-large;
+  }
 }
 
 // Headings

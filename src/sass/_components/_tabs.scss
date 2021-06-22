@@ -8,21 +8,25 @@
 }
 
 @mixin tabs-navlist {
+  display: flex;
+  flex-wrap: wrap;
   margin-bottom: $spacing-medium;
 
   @include breakpoint(tablet) {
-    display: flex;
+    flex-wrap: nowrap;
     margin-bottom: 0;
   }
 }
 
 @mixin tabs-navlist-item {
+  width: 45%;
   margin-bottom: $spacing-xsmall;
 
   @include breakpoint(tablet) {
     border: toRems(1px) solid $c-blue;
     margin-bottom: $spacing-xxsmall;
     margin-right: $spacing-xxsmall;
+    width: auto;
   }
 
   &:last-child {
@@ -45,6 +49,7 @@
       @include breakpoint(tablet) {
         background-color: $c-pearl;
         color: $c-blue;
+        height: calc(100% - 1px);
       }
     }
   }
@@ -83,10 +88,18 @@
   &:focus {
     outline: $focus-style;
   }
+
+  &:hover {
+    color: $c-blue;
+
+    @include breakpoint(tablet) {
+      background-color: $c-orange;
+    }
+  }
 }
 
 @mixin tabs-panel {
-  margin: $spacing-medium 0;
+  margin: $spacing-medium 0 0;
   padding: $spacing-xxsmall $spacing-xsmall;
 
   @include breakpoint(tablet) {

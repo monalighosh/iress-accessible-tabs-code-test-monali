@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="dist/css/index.min.css" />
+    <script src="src/js/index.js" type="module"></script>
   </head>
   <body>
     <header class="c-header">
@@ -20,18 +21,33 @@
       </section>
     </header>
     <main>
+      <section class="c-notification js-notification" role="alert" tabindex="0">
+        <div class="c-notification__content">
+          For keyboard navigation:
+          <br />&#8259; Use Arrow keys to move to the next or previous tab.
+          <br />&#8259; Use Tab key to move to the tab content. <br />&#8259;
+          Press SHIFT + TAB keys to return to the tablist.
+        </div>
+      </section>
+
+      <!-- Tab group 1 -->
       <section class="l-section">
-        <section class="c-tabs" aria-multiselectable="false">
+        <section
+          class="c-tabs js-tabs"
+          aria-multiselectable="false"
+          data-tabgroup="group1"
+        >
           <h2 class="c-tabs__title">Tab Group 1</h2>
-          <ul class="c-tabs__navlist" role="tablist">
+          <ul class="c-tabs__navlist" role="tablist" aria-label="Tab Group 1">
             <li class="c-tabs__navlist-item is-active" role="presentation">
               <a
                 href="#group1-tab-panel-1"
                 id="group1-nav-tab-1"
-                class="c-tabs__nav-tab"
+                class="c-tabs__nav-tab js-tabs-nav-tab"
                 role="tab"
                 aria-selected="true"
                 aria-controls="group1-tab-panel-1"
+                tabindex="0"
                 >Tab 1</a
               >
             </li>
@@ -39,10 +55,11 @@
               <a
                 href="#group1-tab-panel-2"
                 id="group1-nav-tab-2"
-                class="c-tabs__nav-tab"
+                class="c-tabs__nav-tab js-tabs-nav-tab"
                 role="tab"
                 aria-selected="false"
                 aria-controls="group1-tab-panel-2"
+                tabindex="-1"
                 >Tab 2</a
               >
             </li>
@@ -50,10 +67,11 @@
               <a
                 href="#group1-tab-panel-3"
                 id="group1-nav-tab-3"
-                class="c-tabs__nav-tab"
+                class="c-tabs__nav-tab js-tabs-nav-tab"
                 role="tab"
                 aria-selected="false"
                 aria-controls="group1-tab-panel-3"
+                tabindex="-1"
                 >Tab 3</a
               >
             </li>
@@ -61,10 +79,11 @@
               <a
                 href="#group1-tab-panel-4"
                 id="group1-nav-tab-4"
-                class="c-tabs__nav-tab"
+                class="c-tabs__nav-tab js-tabs-nav-tab"
                 role="tab"
                 aria-selected="false"
                 aria-controls="group1-tab-panel-4"
+                tabindex="-1"
                 >Tab 4</a
               >
             </li>
@@ -75,18 +94,19 @@
               id="group1-tab-panel-1"
               role="tabpanel"
               aria-labelledby="group1-nav-tab-1"
-              aria-hidden="true"
+              aria-hidden="false"
             >
               <h3 class="c-tabs__panel-title">Tab 1</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Curabitur fringilla consectetur enim, varius elementum libero
                 tincidunt sit amet. Duis sagittis tincidunt dolor ut varius.
-                Mauris tincidunt nisi nec erat accumsan, nec laoreet ligula
-                auctor. Aenean mattis sem quis tellus varius tempus. Proin non
-                tellus quis lorem imperdiet semper vitae a sem. Praesent
-                suscipit lectus nec auctor faucibus. Sed consequat sodales
-                magna, ut porttitor ligula imperdiet at.
+                Mauris tincidunt nisi nec erat accumsan,
+                <a href="#">nec laoreet</a> ligula auctor. Aenean mattis sem
+                quis tellus varius tempus. Proin non tellus quis lorem imperdiet
+                semper vitae a sem. Praesent suscipit lectus nec auctor
+                faucibus. Sed consequat sodales magna, ut porttitor ligula
+                imperdiet at.
               </p>
             </div>
             <div
@@ -127,6 +147,158 @@
                 imperdiet nisl, nec tristique magna lacinia a. Morbi sit amet
                 justo in nibh hendrerit ultricies sit amet vel augue. Proin
                 finibus erat nec dui pulvinar, eget facilisis turpis ornare.
+                Pellentesque mollis blandit purus,
+                <a href="#">nec laoreet</a> ut mattis lectus efficitur quis.
+                Phasellus ac nulla molestie, tincidunt ipsum quis, hendrerit
+                neque. Orci varius natoque penatibus et magnis dis parturient
+                montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit. Nullam non venenatis est, vitae
+                imperdiet nisi. Aliquam id turpis urna. Donec et laoreet erat.
+                Phasellus venenatis, arcu id accumsan efficitur, lectus mauris
+                vehicula magna, id dictum ex sem ut libero.
+              </p>
+            </div>
+            <div
+              class="c-tabs__panel js-tabs-panel is-hidden"
+              id="group1-tab-panel-4"
+              role="tabpanel"
+              aria-labelledby="group1-nav-tab-4"
+              aria-hidden="true"
+            >
+              <h3 class="c-tabs__panel-title">Tab 4</h3>
+              <p>
+                Etiam porttitor faucibus nisl, eu scelerisque ipsum. Quisque
+                ultrices commodo justo, eu malesuada leo. Suspendisse volutpat
+                dui quis elit tincidunt, sit amet vulputate justo aliquam.
+                Curabitur ac dictum enim, sagittis convallis metus. Vestibulum
+                non purus sapien. Cras rutrum commodo pharetra. Phasellus
+                egestas semper leo sit amet vulputate. Class aptent taciti
+                sociosqu ad litora torquent per conubia nostra, per inceptos
+                himenaeos. Donec posuere a eros eget semper.
+              </p>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Tab group 2 -->
+      <section class="l-section">
+        <section
+          class="c-tabs js-tabs"
+          aria-multiselectable="false"
+          data-tabgroup="group2"
+        >
+          <h2 class="c-tabs__title">Tab Group 2</h2>
+          <ul class="c-tabs__navlist" role="tablist" aria-label="Tab Group 2">
+            <li class="c-tabs__navlist-item is-active" role="presentation">
+              <a
+                href="#group2-tab-panel-1"
+                id="group2-nav-tab-1"
+                class="c-tabs__nav-tab js-tabs-nav-tab"
+                role="tab"
+                aria-selected="true"
+                aria-controls="group2-tab-panel-1"
+                tabindex="0"
+                >Tab 1</a
+              >
+            </li>
+            <li class="c-tabs__navlist-item" role="presentation">
+              <a
+                href="#group2-tab-panel-2"
+                id="group2-nav-tab-2"
+                class="c-tabs__nav-tab js-tabs-nav-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="group2-tab-panel-2"
+                tabindex="-1"
+                >Tab 2</a
+              >
+            </li>
+            <li class="c-tabs__navlist-item" role="presentation">
+              <a
+                href="#group2-tab-panel-3"
+                id="group2-nav-tab-3"
+                class="c-tabs__nav-tab js-tabs-nav-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="group2-tab-panel-3"
+                tabindex="-1"
+                >Tab 3</a
+              >
+            </li>
+            <li class="c-tabs__navlist-item" role="presentation">
+              <a
+                href="#group2-tab-panel-4"
+                id="group2-nav-tab-4"
+                class="c-tabs__nav-tab js-tabs-nav-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="group2-tab-panel-4"
+                tabindex="-1"
+                >Tab 4</a
+              >
+            </li>
+          </ul>
+          <div class="c-tabs__panels">
+            <div
+              class="c-tabs__panel js-tabs-panel"
+              id="group2-tab-panel-1"
+              role="tabpanel"
+              aria-labelledby="group2-nav-tab-1"
+              aria-hidden="false"
+            >
+              <h3 class="c-tabs__panel-title">Tab 1</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Curabitur fringilla consectetur enim, varius elementum libero
+                tincidunt sit amet. Duis sagittis tincidunt dolor ut varius.
+                Mauris tincidunt nisi nec erat accumsan, nec laoreet ligula
+                auctor. Aenean mattis sem quis tellus varius tempus. Proin non
+                tellus quis lorem imperdiet semper vitae a sem. Praesent
+                suscipit lectus nec auctor faucibus. Sed
+                <a href="#">nec laoreet</a> consequat sodales magna, ut
+                porttitor ligula imperdiet at.
+              </p>
+            </div>
+            <div
+              class="c-tabs__panel js-tabs-panel is-hidden"
+              id="group2-tab-panel-2"
+              role="tabpanel"
+              aria-labelledby="group2-nav-tab-2"
+              aria-hidden="true"
+            >
+              <h3 class="c-tabs__panel-title">Tab 2</h3>
+              <p>
+                Aenean convallis orci at arcu sodales, id pharetra lorem
+                fringilla. Duis facilisis nisi in metus blandit ornare. Nam
+                ultrices elit felis, dapibus rhoncus est volutpat in. Aenean id
+                elementum dolor, at malesuada massa. Phasellus tincidunt magna
+                vitae enim efficitur egestas. Morbi
+                <a href="#">nec laoreet</a> turpis magna, suscipit eu sapien sit
+                amet, sollicitudin maximus risus. Aliquam ultricies justo quis
+                nisi semper, ac tempus nulla condimentum. Morbi vulputate
+                gravida augue, eu bibendum enim dapibus eu. Curabitur aliquet
+                quam sed est aliquet, nec tempus ligula dapibus. Vivamus
+                tincidunt imperdiet ipsum, ut scelerisque ante porta eget.
+              </p>
+            </div>
+            <div
+              class="c-tabs__panel js-tabs-panel is-hidden"
+              id="group2-tab-panel-3"
+              role="tabpanel"
+              aria-labelledby="group2-nav-tab-3"
+              aria-hidden="true"
+            >
+              <h3 class="c-tabs__panel-title">Tab 3</h3>
+              <p>
+                Suspendisse potenti. Cras a interdum enim. Nam ullamcorper
+                ligula vel magna pulvinar, vel elementum nisl convallis. Donec
+                accumsan, est nec feugiat elementum, dolor dolor sagittis mi, et
+                sollicitudin massa erat eu libero. Nunc congue erat vel massa
+                sollicitudin, at ultricies tellus eleifend. Donec rutrum
+                imperdiet nisl, nec tristique magna lacinia a. Morbi sit amet
+                justo in nibh hendrerit ultricies sit amet vel augue. Proin
+                finibus erat nec dui pulvinar, eget facilisis turpis ornare.
                 Pellentesque mollis blandit purus, ut mattis lectus efficitur
                 quis. Phasellus ac nulla molestie, tincidunt ipsum quis,
                 hendrerit neque. Orci varius natoque penatibus et magnis dis
@@ -139,9 +311,158 @@
             </div>
             <div
               class="c-tabs__panel js-tabs-panel is-hidden"
-              id="group1-tab-panel-4"
+              id="group2-tab-panel-4"
               role="tabpanel"
-              aria-labelledby="group1-nav-tab-4"
+              aria-labelledby="group2-nav-tab-4"
+              aria-hidden="true"
+            >
+              <h3 class="c-tabs__panel-title">Tab 4</h3>
+              <p>
+                Etiam porttitor faucibus nisl, eu scelerisque ipsum. Quisque
+                ultrices commodo justo, eu malesuada leo. Suspendisse volutpat
+                dui quis elit tincidunt, sit amet vulputate justo aliquam.
+                Curabitur ac dictum enim, sagittis convallis metus. Vestibulum
+                non purus sapien. Cras rutrum commodo pharetra. Phasellus
+                egestas semper leo sit amet vulputate. Class aptent taciti
+                sociosqu ad litora torquent per conubia nostra, per inceptos
+                himenaeos. Donec posuere a eros eget semper.
+              </p>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Tab group 3 -->
+      <section class="l-section">
+        <section
+          class="c-tabs js-tabs"
+          aria-multiselectable="false"
+          data-tabgroup="group3"
+        >
+          <h2 class="c-tabs__title">Tab Group 3</h2>
+          <ul class="c-tabs__navlist" role="tablist" aria-label="Tab Group 3">
+            <li class="c-tabs__navlist-item is-active" role="presentation">
+              <a
+                href="#group3-tab-panel-1"
+                id="group3-nav-tab-1"
+                class="c-tabs__nav-tab js-tabs-nav-tab"
+                role="tab"
+                aria-selected="true"
+                aria-controls="group3-tab-panel-1"
+                tabindex="0"
+                >Tab 1</a
+              >
+            </li>
+            <li class="c-tabs__navlist-item" role="presentation">
+              <a
+                href="#group3-tab-panel-2"
+                id="group3-nav-tab-2"
+                class="c-tabs__nav-tab js-tabs-nav-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="group3-tab-panel-2"
+                tabindex="-1"
+                >Tab 2</a
+              >
+            </li>
+            <li class="c-tabs__navlist-item" role="presentation">
+              <a
+                href="#group3-tab-panel-3"
+                id="group3-nav-tab-3"
+                class="c-tabs__nav-tab js-tabs-nav-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="group3-tab-panel-3"
+                tabindex="-1"
+                >Tab 3</a
+              >
+            </li>
+            <li class="c-tabs__navlist-item" role="presentation">
+              <a
+                href="#group3-tab-panel-4"
+                id="group3-nav-tab-4"
+                class="c-tabs__nav-tab js-tabs-nav-tab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="group3-tab-panel-4"
+                tabindex="-1"
+                >Tab 4</a
+              >
+            </li>
+          </ul>
+          <div class="c-tabs__panels">
+            <div
+              class="c-tabs__panel js-tabs-panel"
+              id="group3-tab-panel-1"
+              role="tabpanel"
+              aria-labelledby="group3-nav-tab-1"
+              aria-hidden="false"
+            >
+              <h3 class="c-tabs__panel-title">Tab 1</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Curabitur fringilla consectetur enim, varius elementum libero
+                tincidunt sit amet. Duis sagittis tincidunt dolor ut varius.
+                Mauris tincidunt nisi nec erat accumsan, nec laoreet ligula
+                auctor. Aenean mattis sem quis tellus varius tempus. Proin non
+                tellus quis lorem imperdiet semper vitae a sem. Praesent
+                suscipit lectus nec auctor faucibus. Sed consequat sodales
+                magna, ut porttitor ligula imperdiet at.
+              </p>
+            </div>
+            <div
+              class="c-tabs__panel js-tabs-panel is-hidden"
+              id="group3-tab-panel-2"
+              role="tabpanel"
+              aria-labelledby="group3-nav-tab-2"
+              aria-hidden="true"
+            >
+              <h3 class="c-tabs__panel-title">Tab 2</h3>
+              <p>
+                Aenean convallis orci at arcu sodales, id pharetra lorem
+                fringilla. Duis facilisis nisi in metus blandit ornare. Nam
+                ultrices elit felis, dapibus rhoncus est volutpat in. Aenean id
+                elementum dolor, at malesuada massa. Phasellus tincidunt magna
+                vitae enim efficitur egestas. Morbi turpis magna, suscipit eu
+                sapien sit amet, sollicitudin maximus risus. Aliquam ultricies
+                justo quis nisi semper, ac tempus nulla condimentum. Morbi
+                vulputate gravida augue, eu bibendum enim dapibus eu. Curabitur
+                aliquet quam sed est aliquet, nec tempus ligula dapibus. Vivamus
+                tincidunt imperdiet ipsum, ut scelerisque ante porta eget.
+              </p>
+            </div>
+            <div
+              class="c-tabs__panel js-tabs-panel is-hidden"
+              id="group3-tab-panel-3"
+              role="tabpanel"
+              aria-labelledby="group3-nav-tab-3"
+              aria-hidden="true"
+            >
+              <h3 class="c-tabs__panel-title">Tab 3</h3>
+              <p>
+                Suspendisse potenti. Cras a interdum enim. Nam ullamcorper
+                ligula vel magna pulvinar, vel elementum nisl convallis. Donec
+                accumsan, est nec feugiat elementum, dolor dolor sagittis mi, et
+                sollicitudin massa erat eu libero. Nunc congue erat vel massa
+                sollicitudin, at ultricies tellus eleifend. Donec rutrum
+                imperdiet nisl, nec tristique magna lacinia a. Morbi sit amet
+                justo in nibh hendrerit ultricies sit amet vel augue. Proin
+                finibus erat nec dui pulvinar, eget facilisis turpis ornare.
+                Pellentesque mollis blandit purus, ut mattis lectus efficitur
+                quis. Phasellus ac nulla molestie, tincidunt ipsum quis,
+                hendrerit neque. Orci varius natoque penatibus et magnis dis
+                parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit. Nullam non venenatis est,
+                vitae imperdiet nisi. Aliquam id turpis urna. Donec et laoreet
+                erat. Phasellus venenatis, arcu id accumsan efficitur, lectus
+                mauris vehicula magna, id dictum ex sem ut libero.
+              </p>
+            </div>
+            <div
+              class="c-tabs__panel js-tabs-panel is-hidden"
+              id="group3-tab-panel-4"
+              role="tabpanel"
+              aria-labelledby="group3-nav-tab-4"
               aria-hidden="true"
             >
               <h3 class="c-tabs__panel-title">Tab 4</h3>

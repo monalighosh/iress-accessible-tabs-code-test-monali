@@ -1,0 +1,13 @@
+{
+  "name": "iress-accessible-tabs-code-test-monali",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "./node_modules/.bin/http-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
